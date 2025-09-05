@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
+import { AppContext } from "../../context/AppContext";
 
 const Navbar = () => {
   const isCourseListPage = location.pathname.includes("/course-list");
   const { openSignIn } = useClerk();
   const { user } = useUser();
-
+  const { navigate, isEducator } = useContext(AppContext);
   return (
     // For Desktop screens
     <div
@@ -16,6 +17,10 @@ const Navbar = () => {
       }`}
     >
       <img
+        onClick={() => {
+          navigate("/");
+          scrollTo(0, 0);
+        }}
         src={assets.logo}
         alt="Logo"
         className="w-28 lg:w32 cursor-pointer"
@@ -24,8 +29,14 @@ const Navbar = () => {
         <div className="flex items-center gap-5">
           {user && (
             <>
-              <button>Become Educator | </button>
-              <Link to={"/my-enrollments"}>My Enrollments</Link>
+              <button
+                onClick={() => {
+                  navigate("/educator");
+                }}
+              >
+                {isEducator ? "Educator Dashboard" : "Become Educator"}
+              </button>
+              | <Link to={"/my-enrollments"}>My Enrollments</Link>
             </>
           )}
         </div>
@@ -47,8 +58,14 @@ const Navbar = () => {
         <div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
           {user && (
             <>
-              <button>Become Educator | </button>
-              <Link to={"/my-enrollments"}>My Enrollments</Link>
+              <button
+                onClick={() => {
+                  navigate("/educator");
+                }}
+              >
+                {isEducator ? "Educator Dashboard" : "Become Educator"}
+              </button>{" "}
+              |<Link to={"/my-enrollments"}>My Enrollments</Link>
             </>
           )}
         </div>
@@ -56,7 +73,7 @@ const Navbar = () => {
         {user ? (
           <UserButton />
         ) : (
-          <button onClick={()=> openSignIn()}>
+          <button onClick={() => openSignIn()}>
             <img src={assets.user_icon} alt="" />
           </button>
         )}
