@@ -1,5 +1,4 @@
-import React from "react";
-import { dummyTestimonial } from "../../assets/assets";
+import { assets, dummyTestimonial } from "../../assets/assets";
 
 const TestimonialsSection = () => {
   return (
@@ -28,27 +27,25 @@ const TestimonialsSection = () => {
                 </h1>
                 <p className="text-gray-800/80">{testimonial.role}</p>
               </div>
-              
             </div>
             <div className="p-5 pb-7">
-                <div className="flex gap-0.5">
-                  {[
-                    ...Array(5).map((_, i) => (
-                      <img
-                        className="h-5"
-                        key={i}
-                        src={
-                          i < Math.floor(calculateRating(course))
-                            ? assets.star
-                            : assets.star_blank
-                        }
-                        alt="star"
-                      />
-                    )),
-                  ]}
-                </div>
-                <p className="text-gray-500 mt-5">{testimonial.feedback}</p>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <img
+                    className="h-5"
+                    key={i}
+                    src={
+                      i < Math.floor(testimonial.rating)
+                        ? assets.star
+                        : assets.star_blank
+                    }
+                    alt="star"
+                  />
+                ))}
               </div>
+              <p className="text-gray-500 mt-5">{testimonial.feedback}</p>
+            </div>
+            <a className="text-blue-500 underline px-5" href="">Read more</a>
           </div>
         ))}
       </div>
