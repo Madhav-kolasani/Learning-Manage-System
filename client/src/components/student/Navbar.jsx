@@ -30,6 +30,7 @@ const Navbar = () => {
           {user && (
             <>
               <button
+                className="cursor-pointer"
                 onClick={() => {
                   navigate("/educator");
                 }}
@@ -59,6 +60,7 @@ const Navbar = () => {
           {user && (
             <>
               <button
+                className="cursor-pointer"
                 onClick={() => {
                   navigate("/educator");
                 }}
