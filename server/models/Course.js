@@ -1,21 +1,21 @@
 import mongoose from "mongoose";
 
 const lectureSchema = new mongoose.Schema({
-  lectureId: {type: String, required: true},
-  lectureTitle: {type: String, required:true},
-  lectureDuration:{ type: Number, required:true},
-  lectureUrl:{ type:String, required: true},
-  isPreviewFree: { type:Boolean, required:true},
-  lectureOrder: { type:Number, required:true},
+  lectureId: { type: String, required: true },
+  lectureTitle: { type: String, required: true },
+  lectureDuration: { type: Number, required: true },
+  lectureUrl: { type: String, required: true },
+  isPreviewFree: { type: Boolean, required: true },
+  lectureOrder: { type: Number, required: true },
 
-},{_id: false});
+}, { _id: false });
 
-const chaprerSchema = new mongoose.Schema({
-  chaprerId:{type: String, required:true},
-  chaprerOrder:{type: Number, required:true},
-  chaprerTitle:{ type: String, required: true},
+const chapterSchema = new mongoose.Schema({
+  chapterId: { type: String, required: true },
+  chapterOrder: { type: Number, required: true },
+  chapterTitle: { type: String, required: true },
   chapterContent: [lectureSchema],
-},{_id: false})
+}, { _id: false })
 
 const courseSchema = new mongoose.Schema({
   courseTitle: {
@@ -42,7 +42,7 @@ const courseSchema = new mongoose.Schema({
   discount: {
     type: Number, required: true, min: 0, max: 100
   },
-  courseContent: [chaprerSchema],
+  courseContent: [chapterSchema],
   courseRating: [{
     userId: {
       type: String,
