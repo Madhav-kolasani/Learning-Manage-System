@@ -5,6 +5,7 @@ Deployed live at [https://lms-learnmate.vercel.app/].
 
 
 ✨ Features
+
 👩‍🏫 For Educators
 
 Secure educator registration & role upgrade
