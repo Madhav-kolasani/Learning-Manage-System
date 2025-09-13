@@ -32,43 +32,63 @@ const Dashboard = () => {
   }, [isEducator]);
 
   return dashboardData ? (
-    <div className="min-h-screen flex flex-col items-start justify-between gap-8 md:p-8 md:pb-0 p-4 pt-8 pb-0">
+    <div className="min-h-screen flex flex-col items-start justify-between gap-8 md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in">
       <div className="space-y-5">
         <div className="flex flex-wrap gap-5 items-center">
-          <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md">
-            <img src={assets.patients_icon} alt="patitnts icon" />
+          <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md hover:shadow-xl hover:scale-105 hover:bg-blue-50 transition-all duration-300 transform">
+            <img
+              src={assets.patients_icon}
+              alt="patitnts icon"
+              className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
+            />
             <div>
-              <p className="text-2xl font-medium text-gray-500">
+              <p className="text-2xl font-medium text-gray-500 hover:text-blue-600 transition-colors duration-300">
                 {dashboardData.enrolledStudentsData.length}
               </p>
-              <p className="text-base text-gray-500">Total Enrollments</p>
+              <p className="text-base text-gray-500 hover:text-gray-700 transition-colors duration-300">
+                Total Enrollments
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md">
-            <img src={assets.appointments_icon} alt="appointments icon" />
+          <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md hover:shadow-xl hover:scale-105 hover:bg-blue-50 transition-all duration-300 transform">
+            <img
+              src={assets.appointments_icon}
+              alt="appointments icon"
+              className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
+            />
             <div>
-              <p className="text-2xl font-medium text-gray-500">
+              <p className="text-2xl font-medium text-gray-500 hover:text-blue-600 transition-colors duration-300">
                 {dashboardData.totalCourses}
               </p>
-              <p className="text-base text-gray-500">Total Courses</p>
+              <p className="text-base text-gray-500 hover:text-gray-700 transition-colors duration-300">
+                Total Courses
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md">
-            <img src={assets.earning_icon} alt="patitnts icon" />
+          <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md hover:shadow-xl hover:scale-105 hover:bg-blue-50 transition-all duration-300 transform">
+            <img
+              src={assets.earning_icon}
+              alt="patitnts icon"
+              className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
+            />
             <div>
-              <p className="text-2xl font-medium text-gray-500">
+              <p className="text-2xl font-medium text-gray-500 hover:text-blue-600 transition-colors duration-300">
                 {currency}
                 {dashboardData.totalEarnings}
               </p>
-              <p className="text-base text-gray-500">Total Earnings</p>
+              <p className="text-base text-gray-500 hover:text-gray-700 transition-colors duration-300">
+                Total Earnings
+              </p>
             </div>
           </div>
         </div>
-        <div>
-          <h2 className="pb-4 text-lg font-medium">Latest Enrollments</h2>
-          <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20">
+        <div className="transform hover:scale-105 transition-transform duration-300">
+          <h2 className="pb-4 text-lg font-medium hover:text-blue-600 transition-colors duration-300">
+            Latest Enrollments
+          </h2>
+          <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20 hover:shadow-xl transition-shadow duration-300">
             <table className="table-fixed md:table-auto w-full overflow-hidden">
-              <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left">
+              <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left hover:bg-gray-50 transition-colors duration-300">
                 <tr>
                   <th className="px-4 py-3 font-semibold text-center hidden sm:table-cell">
                     #
@@ -79,7 +99,10 @@ const Dashboard = () => {
               </thead>
               <tbody className="text-sm text-gray-500">
                 {dashboardData.enrolledStudentsData.map((item, index) => (
-                  <tr key={index} className="border-b border-gray-500/20">
+                  <tr
+                    key={index}
+                    className="border-b border-gray-500/20 hover:bg-blue-50 hover:scale-105 transition-all duration-300 transform"
+                  >
                     <td className="px-4 py-3 text-center hidden sm:table-cell">
                       {index + 1}
                     </td>
@@ -87,11 +110,15 @@ const Dashboard = () => {
                       <img
                         src={item.student.imageUrl}
                         alt="Profile"
-                        className="w-9 h-9 rounded-full"
+                        className="w-9 h-9 rounded-full hover:scale-125 hover:rotate-12 transition-transform duration-300"
                       />
-                      <span className="truncate">{item.student.name}</span>
+                      <span className="truncate hover:text-blue-600 transition-colors duration-300">
+                        {item.student.name}
+                      </span>
                     </td>
-                    <td className="px-4 py-3 truncate">{item.courseTitle}</td>
+                    <td className="px-4 py-3 truncate hover:text-blue-600 transition-colors duration-300">
+                      {item.courseTitle}
+                    </td>
                   </tr>
                 ))}
               </tbody>

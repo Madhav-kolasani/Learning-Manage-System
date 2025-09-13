@@ -42,15 +42,16 @@ const Navbar = () => {
         isCourseListPage ? "bg-white" : "bg-cyan-100/70"
       }`}
     >
-      <img
+      <div
+        className="flex items-center cursor-pointer gap-[4px]"
         onClick={() => {
           navigate("/");
           scrollTo(0, 0);
         }}
-        src={assets.logo}
-        alt="Logo"
-        className="w-28 lg:w32 cursor-pointer"
-      />
+      >
+        <img src={assets.logo} alt="Logo" className="w-10 lg:w-12" />
+        <span className="text-xl font-semibold text-gray-800">LearnMate</span>
+      </div>
       <div className="hidden md:flex items-center gap-5 text-gray-500">
         <div className="flex items-center gap-5">
           {user && (

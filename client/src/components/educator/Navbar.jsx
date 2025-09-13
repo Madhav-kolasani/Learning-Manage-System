@@ -10,7 +10,11 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-500 py-3">
       <Link to="/">
-        <img src={assets.logo} alt="logo" className="w-28 lg:w-32" />
+      <div
+        className="flex items-center cursor-pointer gap-[4px]">
+        <img src={assets.logo} alt="logo" className="w-10 lg:w-12" />
+        <span className="text-xl font-semibold text-gray-800">Welcome back Educator..</span>
+      </div>
       </Link>
       <div className="flex items-center gap-5 text-gray-500">
         <p>Hi👋🏻 {user ? user.fullName : "Developers"}</p>

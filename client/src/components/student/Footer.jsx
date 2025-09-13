@@ -2,10 +2,19 @@ import { assets } from "../../assets/assets";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 md:px-36 text-left w-full mt-10">
+    <footer className="bg-gray-900 md:px-36 text-left w-full mt-10 animate-fade-in">
       <div className="flex flex-col md:flex-row items-start px-8 md:px-0 justify-center gap-10 md:gap-32 py-10 border-b border-white/30">
-        <div className="flex flex-col md:items-start items-center w-full">
-          <img src={assets.logo_dark} alt="logo" />
+        <div className="flex flex-col md:items-start items-center w-full transform hover:scale-105 transition-transform duration-300">
+          <div className="flex items-center cursor-pointer gap-[4px] hover:gap-2 transition-all duration-300">
+            <img
+              src={assets.logo}
+              alt="logo"
+              className="w-10 lg:w-12 hover:rotate-12 transition-transform duration-300"
+            />
+            <span className="text-xl font-semibold text-white hover:text-blue-400 transition-colors duration-300">
+              LearnMate
+            </span>
+          </div>
           <p className="mt-6 text-center md:text-left text-sm text-white/80">
             LearnMate is your trusted online learning platform, bringing
             together expert educators, engaging courses, and interactive tools
@@ -43,7 +52,9 @@ const Footer = () => {
               placeholder="Enter your email"
               className="border border-gray-500/30 bg-gray-800 text-gray-500 placeholder-gray-500 outline-none w-64 h-9 rounded px-2 text-sm"
             />
-            <button className="bg-blue-600 w-24 h-9 text-white rounded cursor-pointer">Subscribe</button>
+            <button className="bg-blue-600 w-24 h-9 text-white rounded cursor-pointer">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>

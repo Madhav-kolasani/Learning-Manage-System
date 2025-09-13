@@ -12,17 +12,17 @@ const SearchBar = ({ data }) => {
   };
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center animate-fade-in">
       <form
         onSubmit={onSearchHandler}
-        className="w-full max-w-2xl flex items-center bg-white border border-gray-300 rounded-full shadow-md overflow-hidden"
+        className="w-full max-w-2xl flex items-center bg-white border border-gray-300 rounded-full shadow-md overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 transform"
       >
         {/* Search Icon */}
         <div className="flex items-center justify-center px-4">
           <img
             src={assets.search_icon}
             alt="search_icon"
-            className="w-6 h-6 opacity-70"
+            className="w-6 h-6 opacity-70 hover:opacity-100 hover:scale-125 transition-all duration-300"
           />
         </div>
 
@@ -32,7 +32,7 @@ const SearchBar = ({ data }) => {
           value={input}
           type="text"
           placeholder="Search for courses"
-          className="flex-grow h-14 px-2 text-gray-700 text-lg outline-none"
+          className="flex-grow h-14 px-2 text-gray-700 text-lg outline-none hover:text-blue-600 focus:text-blue-600 transition-colors duration-300"
         />
 
         {/* Button */}
