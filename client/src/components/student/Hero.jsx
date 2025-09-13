@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 const Hero = () => {
   return (
-    <div className="w-screen min-w-full bg-gradient-to-b from-cyan-100/80 to-white -mx-7 md:mx-0">
+    <div className="w-screen min-w-full bg-gradient-to-b from-emerald-100 to-white -mx-7 md:mx-0">
       <div className="flex flex-col items-center justify-center w-full md:pt-13 pt-20 px-7 md:px-0 space-y-7 text-center">
         <h1 className="md:text-home-heading-large text-home-heading-small relative font-bold text-gray-800 max-w-3xl max-w-auto">
           Empower your future with the courses designed{" "}

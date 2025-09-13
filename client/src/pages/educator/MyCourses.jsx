@@ -29,7 +29,7 @@ const MyCourses = () => {
   }, [isEducator]);
 
   return courses ? (
-    <div className="min-h-screen flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in">
+    <div className="min-h-screen flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in bg-gradient-to-b from-indigo-100/60 to-white">
       <div className="w-full">
         <h2 className="pb-4 text-lg font-medium hover:text-blue-600 transition-colors duration-500 transform hover:scale-105">
           My Courses

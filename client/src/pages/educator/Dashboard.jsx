@@ -32,7 +32,7 @@ const Dashboard = () => {
   }, [isEducator]);
 
   return dashboardData ? (
-    <div className="min-h-screen flex flex-col items-start justify-between gap-8 md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in">
+    <div className="min-h-screen flex flex-col items-start justify-between gap-8 md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in bg-gradient-to-b from-indigo-100/70 to-white">
       <div className="space-y-5">
         <div className="flex flex-wrap gap-5 items-center">
           <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md hover:shadow-xl hover:scale-105 hover:bg-blue-50 transition-all duration-300 transform">

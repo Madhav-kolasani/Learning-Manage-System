@@ -31,7 +31,7 @@ const StudentsEnrolled = () => {
   }, [isEducator]);
 
   return enrolledStudents ? (
-    <div className="min-h-screen flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in">
+    <div className="min-h-screen flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in bg-gradient-to-b from-indigo-100/60 to-white">
       <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
         <table className="table-fixed md:table-auto w-full overflow-hidden pb-4">
           <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left hover:bg-gray-50 transition-colors duration-300">

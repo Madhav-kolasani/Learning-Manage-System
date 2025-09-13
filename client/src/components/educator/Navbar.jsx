@@ -8,7 +8,7 @@ const Navbar = () => {
   const { user } = useUser();
 
   return (
-    <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-500 py-3">
+    <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-500 py-3 bg-indigo-100">
       <Link to="/">
       <div
         className="flex items-center cursor-pointer gap-[4px]">

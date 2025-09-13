@@ -57,7 +57,7 @@ const MyEnrollments = () => {
 
   return (
     <>
-      <div className="md:px-36 px-8 pt-10 animate-fade-in">
+      <div className="md:px-36 px-8 pt-10 animate-fade-in bg-gradient-to-b from-emerald-100 to-white">
         <h1 className="text-2xl font-semibold hover:text-blue-600 transition-colors duration-500 transform hover:scale-105">
           My Enrollments
         </h1>

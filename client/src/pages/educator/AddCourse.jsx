@@ -151,7 +151,7 @@ const AddCourse = () => {
   }, []);
 
   return (
-    <div className="h-screen overflow-scroll flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in">
+    <div className="h-screen overflow-scroll flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0 animate-fade-in bg-gradient-to-b from-indigo-100/60 to-white">
       <form
         action=""
         onSubmit={handleSubmit}
